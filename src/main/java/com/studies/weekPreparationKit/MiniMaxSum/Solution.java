@@ -22,16 +22,17 @@ class Result {
         if(arr.size() < 1 || arr.size() > Math.pow(2, 10)){
             throw new IllegalArgumentException("Invalid input");
         }
-        List<Long> sumList = new ArrayList<>();
 
-        //O(n²)
-        for(int i = 0; i < arr.size(); i++){
-            long sum = 0L;
-            for(int j = 0; j < arr.size(); j++){
-                if(j == i) continue;
-                sum = sum + arr.get(j);
-            }
-            sumList.add(sum);
+        //O(n)
+        long totalSum = 0;
+        for (Integer number : arr) {
+            totalSum += number;
+        }
+
+        List<Long> sumList = new ArrayList<>();
+        for (Integer number : arr) {
+            long sumExcluding = totalSum - number;
+            sumList.add(sumExcluding);
         }
 
         Long min = sumList.getFirst();
