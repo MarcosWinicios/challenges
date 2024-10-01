@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -45,6 +46,18 @@ class Result {
         return set.iterator().next();
     }
 
+    //O(n²)
+    public static int lonelyintegerCollectionsFrequencySolution(List<Integer> list) {
+        int result = 0;
+        for(int number : list){
+            if(Collections.frequency(list, number) == 1){
+                result = number;
+                break;
+            }
+        }
+        return result;
+    }
+
     //O(n log n)
     public static int lonelyintegerSortSolution(List<Integer> list) {
         Collections.sort(list);
@@ -72,7 +85,7 @@ public class Solution {
                 .collect(toList());
 
 //        int result = Result.lonelyinteger(a);
-        int result = Result.lonelyintegerSortSolution(a);
+        int result = Result.lonelyintegerCollectionsFrequencySolution(a);
         System.out.println(result);
         bufferedWriter.write(String.valueOf(result));
         bufferedWriter.newLine();
