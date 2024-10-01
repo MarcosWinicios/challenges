@@ -35,13 +35,34 @@ public class Main {
         var randomList = UseFullMethods.generateRandomList(10);
 //        UseFullMethods.printList(randomList);
 
-        List<Integer> diagonal = new ArrayList<>();
+        List<Integer> leftDiagonal = new ArrayList<>();
+        List<Integer> rightDiagonal = new ArrayList<>();
 
         for(int i = 0; i < randomMatrix.size(); i++){
-            for(int j = 0; j <= i; j++){
-                System.out.print(randomMatrix.get(i).get(j));
-            }
+            leftDiagonal.add(randomMatrix.get(i).get(i));
+            int reverseIndex = (randomMatrix.size() - 1) - i;
+            rightDiagonal.add(randomMatrix.get(i).get(reverseIndex));
         }
+
+        UseFullMethods.printList(leftDiagonal);
+        UseFullMethods.printList(rightDiagonal);
+
+        long leftSum = leftDiagonal.stream()
+                .reduce(Integer::sum)
+                .get();
+
+        long rightSum = rightDiagonal.stream()
+                .reduce(Integer::sum)
+                .get();
+
+        long difference = 0;
+        if(leftSum > rightSum){
+            difference = leftSum - rightSum;
+        }else{
+            difference = rightSum - leftSum;
+        }
+
+        System.out.printf("difference between %d and %d: %d", leftSum, rightSum, difference);
 
     }
 }
