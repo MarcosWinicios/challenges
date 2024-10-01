@@ -1,5 +1,6 @@
 package com.studies.weekPreparationKit.diagonalDIfference;
 
+import com.studies.Main;
 import com.studies.utils.AbsoluteValues;
 
 import java.io.*;
@@ -24,30 +25,15 @@ class Result {
      */
 
     public static int diagonalDifference(List<List<Integer>> arr) {
-        List<Integer> leftDiagonal = new ArrayList<>();
-        List<Integer> rightDiagonal = new ArrayList<>();
-
-        for(int i = 0; i < arr.size(); i++){
-            leftDiagonal.add(arr.get(i).get(i));
-            int reverseIndex = (arr.size() - 1) - i;
-            rightDiagonal.add(arr.get(i).get(reverseIndex));
+       int leftSum = 0;
+       int rightSum = 0;
+       int size = arr.size();
+        for(int i = 0; i < size; i++){
+            leftSum += arr.get(i).get(i);
+            int reverseIndex = (size - 1) - i;
+            rightSum += (arr.get(i).get(reverseIndex));
         }
-
-        int leftSum = leftDiagonal.stream()
-                .reduce(Integer::sum)
-                .get();
-
-        int rightSum = rightDiagonal.stream()
-                .reduce(Integer::sum)
-                .get();
-
-        int difference = 0;
-        if(leftSum > rightSum){
-            difference = leftSum - rightSum;
-        }else{
-            difference = rightSum - leftSum;
-        }
-        return difference;
+        return Math.abs(leftSum - rightSum);
     }
 
 }
