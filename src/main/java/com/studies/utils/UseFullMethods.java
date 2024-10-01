@@ -1,8 +1,13 @@
 package com.studies.utils;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 
 public class UseFullMethods {
+
+    private static final Random random = new Random();
 
     public static <T> void printList(List<T> list){
         System.out.println("\n"+list.toString());
@@ -24,5 +29,39 @@ public class UseFullMethods {
                 System.out.print("]");
             }
         }
+    }
+
+    public static <T> void printSquareMatrix(List<List<T>> matrix){
+        System.out.println("\n" + matrix.toString() + "\n");
+
+        for (List<T> row : matrix){
+            System.out.println(row.toString());
+        }
+
+        System.out.println();
+    }
+
+    public static List<List<Integer>> generateRandomSquareMatrix(int size){
+
+        List<List<Integer>> result = new ArrayList<>();
+
+        for (int i = 0; i < size; i++){
+            List<Integer> row = new ArrayList<>();
+            for(int j = 0; j < size; j++){
+                row.add(random.nextInt(10));
+            }
+            result.add(row);
+        }
+
+        return result;
+    }
+
+    public static List<Integer> generateRandomList(int size){
+        List<Integer> result =  new ArrayList<>();
+        for(int i = 0; i < size; i++){
+            result.add(random.nextInt(100));
+        }
+
+        return result;
     }
 }
