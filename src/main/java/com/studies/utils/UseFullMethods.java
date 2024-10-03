@@ -1,7 +1,9 @@
 package com.studies.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 
@@ -63,5 +65,17 @@ public class UseFullMethods {
         }
 
         return result;
+    }
+
+    public static <T> void printArray(T[] array){
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static void printArray(int[] array){
+        System.out.println(Arrays.toString(array));
+    }
+
+    public static <K, V> void printMap(Map<K, V> map){
+        map.forEach(((k, v) -> System.out.println("Key: " + k + " Value: " + v)));
     }
 }
