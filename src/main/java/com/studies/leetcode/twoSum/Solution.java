@@ -1,4 +1,4 @@
-package com.studies.leetocde.twoSum;
+package com.studies.leetcode.twoSum;
 
 
 import com.studies.utils.UseFullMethods;
