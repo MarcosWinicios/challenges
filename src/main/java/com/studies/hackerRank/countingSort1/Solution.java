@@ -1,4 +1,4 @@
-package com.studies.weekPreparationKit.countingSort1;
+package com.studies.hackerRank.countingSort1;
 
 import com.studies.utils.AbsoluteValues;
 import com.studies.utils.UseFullMethods;

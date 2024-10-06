@@ -1,4 +1,4 @@
-package com.studies.weekPreparationKit.multiplesOfThreeAndFive;
+package com.studies.hackerRank.multiplesOfThreeAndFive;
 
 import java.util.Scanner;
 

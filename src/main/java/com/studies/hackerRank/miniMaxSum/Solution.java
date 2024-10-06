@@ -1,4 +1,4 @@
-package com.studies.weekPreparationKit.miniMaxSum;
+package com.studies.hackerRank.miniMaxSum;
 
 import java.io.BufferedReader;
 import java.io.IOException;

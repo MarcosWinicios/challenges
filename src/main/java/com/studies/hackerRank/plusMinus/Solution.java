@@ -1,4 +1,4 @@
-package com.studies.weekPreparationKit.plusMinus;
+package com.studies.hackerRank.plusMinus;
 
 import java.io.BufferedReader;
 import java.io.IOException;
